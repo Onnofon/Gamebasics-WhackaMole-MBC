@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timerText;
 
-    // Update is called once per frame
+    //Countdown timer when countdown reaches 0 stop game function is called
     void Update()
     {
         time -= Time.deltaTime;
