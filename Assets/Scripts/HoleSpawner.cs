@@ -6,6 +6,7 @@ public class HoleSpawner : MonoBehaviour
 {
     public GameObject hole;
     public int holeNumber;
+    public GameManager gm;
 
     private void Start()
     {
@@ -22,5 +23,7 @@ public class HoleSpawner : MonoBehaviour
             molehole.transform.localScale = new Vector3(1, 1, 1);
 
         }
+
     }
 }
+

@@ -513,6 +513,7 @@ MonoBehaviour:
   holes: 0
   time: 99
   score: 0
+  gameActive: 1
   scoreText: {fileID: 224826047}
   timerText: {fileID: 132568657}
 --- !u!1 &509930559
@@ -889,7 +890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hole: {fileID: 309194504578083138, guid: 9985283d552d8b34aba1429dd8808050, type: 3}
-  holeNumber: 4
+  holeNumber: 35
+  gm: {fileID: 380411915}
 --- !u!114 &1868771767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,7 +912,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 80, y: 80}
   m_Spacing: {x: 300, y: 400}
   m_Constraint: 0
   m_ConstraintCount: 5

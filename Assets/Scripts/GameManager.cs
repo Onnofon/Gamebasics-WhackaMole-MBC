@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int holes;
     public float time;
     public int score;
+    public bool gameActive;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timerText;
