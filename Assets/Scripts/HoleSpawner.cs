@@ -7,6 +7,7 @@ public class HoleSpawner : MonoBehaviour
     public GameObject hole;
     public int holeNumber;
     public GameManager gm;
+    public List<GameObject> moles = new List<GameObject>();
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class HoleSpawner : MonoBehaviour
             GameObject molehole = Instantiate(hole);
             molehole.transform.SetParent(this.transform);
             molehole.transform.localScale = new Vector3(1, 1, 1);
-
+            moles.Add(molehole);
         }
 
     }
