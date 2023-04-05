@@ -9,7 +9,6 @@ public class Highscore : MonoBehaviour
 {
     public int[] playerScore;
     public TextMeshProUGUI highscoreText;
-    private string text;
     private void Start()
     {
         Array.Sort(playerScore);
@@ -22,7 +21,11 @@ public class Highscore : MonoBehaviour
     }
     public void UpdateHighScore()
     {
-        highscoreText.text = playerScore.ToString();
+        for (int i = 0; i < playerScore.Length; i++)
+        {
+            Debug.Log("hi");
+            highscoreText.text += playerScore[i].ToString() + "\n";
+        }
         
     }
 }
