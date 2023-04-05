@@ -24,4 +24,9 @@ public class GameManager : MonoBehaviour
             //stopgame
         }
     }
+
+    public void GetPoints(int points)
+    {
+        score += points;
+    }
 }

@@ -52,7 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad7a5b9dd6d4cc44883d33da9049de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnTimer: 1
   mole: {fileID: 8501042199317629486}
+  scorePoints: 10
 --- !u!1 &5316720674472546826
 GameObject:
   m_ObjectHideFlags: 0

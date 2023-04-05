@@ -5,10 +5,20 @@ using UnityEngine.UI;
 
 public class Mole : MonoBehaviour
 {
+    public float despawnTimer;
     public GameObject mole;
+    private GameManager gameManager;
+    public int scorePoints;
+
+    private void Start()
+    {
+        gameManager = transform.root.GetComponent<GameManager>();
+    }
+
     public void Hit()
     {
         mole.SetActive(false);
+        gameManager.GetPoints(scorePoints);
     }
     public void Spawn()
     {
@@ -23,7 +33,7 @@ public class Mole : MonoBehaviour
 
     public IEnumerator DespawnTimer()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(despawnTimer);
         Despawn();
     }
 }
