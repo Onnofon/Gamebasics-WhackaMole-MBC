@@ -7,9 +7,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int holes;
-    public float time;
+    private float time;
     public int playerScore;
-    public string playerName;
+    private string playerName;
     public bool gameActive;
     public ScoreManager scoreManager;
     public GameObject endScreen;
@@ -44,5 +44,6 @@ public class GameManager : MonoBehaviour
     {
         playerName = PlayerPrefs.GetString("name");
         holes = PlayerPrefs.GetInt("holes");
+        time = PlayerPrefs.GetFloat("time");
     }
 }

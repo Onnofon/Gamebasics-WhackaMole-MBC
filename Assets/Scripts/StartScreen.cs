@@ -8,22 +8,25 @@ public class StartScreen : MonoBehaviour
 {
     public TextMeshProUGUI inputName;
     public TMPro.TMP_InputField inputHoles;
-    public int holeNumber;
+    public TMPro.TMP_InputField inputTime;
+    private int holeNumber;
+    private float gameLength;
     public Button button;
 
     //Checks for empty fields and convert input to int.
     private void Update()
     {
-        if(inputName.text == "" || inputHoles.text == "")
+        if(inputName.text == "" || inputHoles.text == "" || inputTime.text == "")
         {
             button.interactable = false;
         }
-        else if(inputName.text != "" && inputHoles.text != "")
+        else if(inputName.text != "" && inputHoles.text != "" && inputTime.text != "")
         {
             button.interactable = true;
         }
 
         int.TryParse(inputHoles.text, out holeNumber);
+        float.TryParse(inputTime.text, out gameLength);
     }
 
     //Set playerpref data so it can be used in gamemanager
@@ -31,5 +34,6 @@ public class StartScreen : MonoBehaviour
     {
         PlayerPrefs.SetInt("holes", holeNumber);
         PlayerPrefs.SetString("name", inputName.text);
+        PlayerPrefs.SetFloat("time", gameLength);
     }
 }
