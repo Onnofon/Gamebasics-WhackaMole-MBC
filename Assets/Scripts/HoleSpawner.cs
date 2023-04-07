@@ -13,7 +13,7 @@ public class HoleSpawner : MonoBehaviour
         SpawnHoles();
     }
 
-    //Spawn mole holes based on user input for amount of holes.
+    //Spawn mole holes based on user input for amount of holes and check to see if higher than max was the value.
     public void SpawnHoles()
     {
         if (gm.holes >= 35)

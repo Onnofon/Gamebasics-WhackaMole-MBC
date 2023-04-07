@@ -23,6 +23,7 @@ public class MoleSpawner : MonoBehaviour
         SetRandomTime();
     }
 
+    //Countdown for when the mole needs to appear
     private void Update()
     {
         time += Time.deltaTime;
@@ -33,11 +34,14 @@ public class MoleSpawner : MonoBehaviour
             time = 0f;
         }
     }
+
+    //Sets random time for when next mole should appear
     private void SetRandomTime()
     {
         spawnTime = Random.Range(minTime, maxTime);
     }
 
+    //Mole is spawned in random hole
     public void SpawnMole()
     {
         int moleToSpawn;

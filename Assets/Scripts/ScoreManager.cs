@@ -7,18 +7,30 @@ public class ScoreManager : MonoBehaviour
 {
     private ScoreData sd;
 
+    //Check if playerprefs is empty or else load the data
     private void Awake()
     { 
-
-        var json = PlayerPrefs.GetString("scores", "{}");
-        sd = new ScoreData();
+        
+        string json = PlayerPrefs.GetString("scores", "{}");
+        if (string.IsNullOrEmpty(json) == true)
+        {
+            Debug.Log("empty");
+            sd = new ScoreData();
+        }
+        else
+        {
+            Debug.Log("not empty");
+            sd = JsonUtility.FromJson<ScoreData>(json);
+        }
     }
 
+    //Sort the highscore for ranking system
     public IEnumerable<Score> GetHighScores()
     {
         return sd.scores.OrderByDescending(x => x.score);
     }
 
+    //Add score to data
     public void AddScore(Score score)
     {
         sd.scores.Add(score);
@@ -29,9 +41,10 @@ public class ScoreManager : MonoBehaviour
         SaveScore();
     }
 
+    //Save scores to current playsession
     public void SaveScore()
     {
-        var json = JsonUtility.ToJson(sd);
-        PlayerPrefs.SetString("scores", json);
+        string json = JsonUtility.ToJson(sd);
+        PlayerPrefs.SetString("scores", json.ToString());
     }
 }

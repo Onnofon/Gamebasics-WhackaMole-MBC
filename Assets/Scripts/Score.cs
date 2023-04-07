@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Score : MonoBehaviour
+//Data class for storing
+[Serializable]
+public class Score
 {
     public string name;
     public float score;
