@@ -5,7 +5,6 @@ using UnityEngine;
 public class HoleSpawner : MonoBehaviour
 {
     public GameObject hole;
-    public int holeNumber;
     public GameManager gm;
     public List<GameObject> moles = new List<GameObject>();
 
@@ -17,7 +16,10 @@ public class HoleSpawner : MonoBehaviour
     //Spawn mole holes based on user input for amount of holes.
     public void SpawnHoles()
     {
-        for (int i = 0; i < holeNumber; i++)
+        if (gm.holes >= 35)
+            gm.holes = 35;
+
+        for (int i = 0; i < gm.holes; i++)
         {
             GameObject molehole = Instantiate(hole);
             molehole.transform.SetParent(this.transform);
