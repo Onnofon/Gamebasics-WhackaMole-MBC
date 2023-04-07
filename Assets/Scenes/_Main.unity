@@ -512,11 +512,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holes: 0
-  time: 99
+  time: 30
   playerScore: 0
   playerName: 
   gameActive: 1
   scoreManager: {fileID: 449454769}
+  endScreen: {fileID: 1434791563}
   scoreText: {fileID: 224826047}
   timerText: {fileID: 132568657}
 --- !u!1 &449454768
@@ -779,6 +780,7 @@ GameObject:
   - component: {fileID: 746179422}
   - component: {fileID: 746179421}
   - component: {fileID: 746179420}
+  - component: {fileID: 746179423}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -850,7 +852,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 746179421}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 746179423}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: _StartScreen
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &746179421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,6 +903,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746179418}
   m_CullTransparentMesh: 1
+--- !u!114 &746179423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746179418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce573c7b99a31f4cbc98f0f19d992ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &872100262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6663266016384300009, guid: b721b3a051d3e8344af32ee345cd58ea, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6663266016384300009, guid: b721b3a051d3e8344af32ee345cd58ea, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1868,7 +1894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8622383251229352609, guid: b721b3a051d3e8344af32ee345cd58ea, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 650
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 8622383251229352609, guid: b721b3a051d3e8344af32ee345cd58ea, type: 3}
       propertyPath: m_AnchoredPosition.y

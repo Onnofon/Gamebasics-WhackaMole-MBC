@@ -15,22 +15,27 @@ public class Mole : MonoBehaviour
         gameManager = transform.root.GetComponent<GameManager>();
     }
 
+    //If you hit the mole it leaves and the gamemanager updates the points.
     public void Hit()
     {
         mole.SetActive(false);
         gameManager.GetPoints(scorePoints);
-    }
+    }  
+
+    //Mole appears
     public void Spawn()
     {
         mole.SetActive(true);
         StartCoroutine(DespawnTimer());
     }
 
+    //Mole leaves
     public void Despawn()
     {
         mole.SetActive(false);
     }
 
+    //Timer for how long the mole can stay
     public IEnumerator DespawnTimer()
     {
         yield return new WaitForSeconds(despawnTimer);

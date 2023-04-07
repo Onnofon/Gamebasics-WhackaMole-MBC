@@ -10,6 +10,8 @@ public class StartScreen : MonoBehaviour
     public TMPro.TMP_InputField inputHoles;
     public int holeNumber;
     public Button button;
+
+    //Checks for empty fields and convert input to int.
     private void Update()
     {
         if(inputName.text == "" || inputHoles.text == "")
@@ -23,6 +25,8 @@ public class StartScreen : MonoBehaviour
 
         int.TryParse(inputHoles.text, out holeNumber);
     }
+
+    //Set playerpref data so it can be used in gamemanager
     private void OnDisable()
     {
         PlayerPrefs.SetInt("holes", holeNumber);
